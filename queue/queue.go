@@ -77,6 +77,10 @@ func (q *Queue) Close() {
 }
 
 func (q *Queue) Publish(message interface{}) error {
+	return nil
+}
+
+func (q *Queue) publish(message interface{}, when time.Time) error {
 	data, err := json.Marshal(message)
 	if err != nil {
 		return err
